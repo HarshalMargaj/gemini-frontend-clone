@@ -1,8 +1,7 @@
 import React from "react";
-import Sidebar from "./_components/Sidebar";
 
 const page = () => {
-	return <div>page</div>;
+	return <div>chatroom</div>;
 };
 
 export default page;

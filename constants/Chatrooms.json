@@ -1,0 +1,9 @@
+{
+	"chatrooms": [
+		{
+			"id": 1,
+			"title": "New Chat",
+			"createdAt": "2025-07-16T14:00:00Z"
+		}
+	]
+}

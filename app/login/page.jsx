@@ -35,7 +35,6 @@ export default function LoginPage() {
 				const response = await axios.get(
 					"https://restcountries.com/v3.1/all?fields=name,flags,idd"
 				);
-				console.log(response.data);
 				setCountryCodes(response.data);
 			} catch (error) {
 				console.log(error);
