@@ -1,9 +1,39 @@
 {
-	"chatrooms": [
-		{
-			"id": 1,
-			"title": "New Chat",
-			"createdAt": "2025-07-16T14:00:00Z"
-		}
-	]
+  "chatrooms": [
+    {
+      "id": "84d83705-13bf-4e68-8806-41fdf32cf347",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:34:19.703Z"
+    },
+    {
+      "id": "6aa74b16-36bd-4226-9a29-8c05dd75d4fa",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:34:22.346Z"
+    },
+    {
+      "id": "ec6fa2af-6c4c-48b5-ab0b-115a3d0eda80",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:36:21.369Z"
+    },
+    {
+      "id": "c317473c-c4ae-4985-923e-fa4c09cc7928",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:40:09.531Z"
+    },
+    {
+      "id": "924ada08-05d9-4763-b9f1-2f18c60ea04d",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:41:19.596Z"
+    },
+    {
+      "id": "7dfd9508-07a5-4c79-aedf-59ed6b06bb48",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:41:32.337Z"
+    },
+    {
+      "id": "1a16b29a-5a07-48f9-8dd0-082d40a6f14a",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-16T15:41:35.211Z"
+    }
+  ]
 }
