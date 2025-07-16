@@ -62,7 +62,11 @@ export default function LoginPage() {
 	const onSubmit = data => {
 		if (!showOtp) {
 			toast.success("OTP sent to your number!");
-			setShowOtp(true);
+			setTimeout(() => {
+				toast.dismiss();
+				toast.success("OTP sent to your number!");
+				setShowOtp(true);
+			}, 1500);
 		} else {
 			if (data.otp === "1234") {
 				toast.success("OTP verified!");
@@ -99,7 +103,6 @@ export default function LoginPage() {
 								setValue={setValue}
 							/>
 						}
-						appendTo={document.body}
 					>
 						<div className="border rounded dark:bg-gray-700 dark:text-white p-2 h-10 flex items-center justify-center w-15">
 							{watch("countryCode")}
