@@ -1,16 +1,6 @@
 {
   "chatrooms": [
     {
-      "id": "84d83705-13bf-4e68-8806-41fdf32cf347",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:34:19.703Z"
-    },
-    {
-      "id": "6aa74b16-36bd-4226-9a29-8c05dd75d4fa",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:34:22.346Z"
-    },
-    {
       "id": "ec6fa2af-6c4c-48b5-ab0b-115a3d0eda80",
       "title": "Simple Greeting and Response",
       "createdAt": "2025-07-16T15:36:21.369Z"

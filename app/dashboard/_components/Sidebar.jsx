@@ -3,13 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { SquarePen } from "lucide-react";
+import { EllipsisVertical, SquarePen } from "lucide-react";
 import axios from "axios";
 
 import { v4 as uuidv4 } from "uuid";
 import toast, { Toaster } from "react-hot-toast";
+import Tippy from "@tippyjs/react";
+import ChatroomMenuDropdownContent from "./ChatroomMenuDropdownContent";
 
 const Sidebar = () => {
+	const [hoverChatId, setHoverChatId] = useState();
+	const [selectedChat, setSelectedChat] = useState();
 	const [chatrooms, setChatrooms] = useState([]);
 	const router = useRouter();
 
@@ -59,11 +63,37 @@ const Sidebar = () => {
 			<div className="space-y-2">
 				{chatrooms.map(chatroom => (
 					<div
-						onClick={() => router.push(`/dashboard/${chatroom.id}`)}
+						onMouseEnter={() => setHoverChatId(chatroom.id)}
+						onMouseLeave={() => setHoverChatId(null)}
+						onClick={() => {
+							router.push(`/dashboard/${chatroom.id}`);
+							setSelectedChat(chatroom.id);
+						}}
 						key={chatroom.id}
-						className="bg-[#1E3660] rounded-lg p-2 truncate cursor-pointer text-sm"
+						className={`${
+							selectedChat === chatroom.id
+								? "bg-[#1E3660]"
+								: "hover:bg-neutral-700"
+						} rounded-lg p-2  cursor-pointer text-sm flex items-center justify-between h-8`}
 					>
-						{chatroom.title}
+						<div className="truncate">{chatroom.title}</div>
+						{hoverChatId === chatroom.id && (
+							<Tippy
+								interactive={true}
+								placement="right"
+								trigger="click"
+								content={
+									<ChatroomMenuDropdownContent
+										id={chatroom.id}
+										setChatrooms={setChatrooms}
+									/>
+								}
+							>
+								<div className="hover:bg-white/5 rounded-full p-1">
+									<EllipsisVertical size={15} />
+								</div>
+							</Tippy>
+						)}
 					</div>
 				))}
 			</div>
