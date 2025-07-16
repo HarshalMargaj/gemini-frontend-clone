@@ -61,7 +61,6 @@ export default function LoginPage() {
 
 	const onSubmit = data => {
 		if (!showOtp) {
-			toast.success("OTP sent to your number!");
 			setTimeout(() => {
 				toast.dismiss();
 				toast.success("OTP sent to your number!");
