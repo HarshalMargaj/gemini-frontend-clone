@@ -1,29 +1,14 @@
 {
   "chatrooms": [
     {
-      "id": "ec6fa2af-6c4c-48b5-ab0b-115a3d0eda80",
+      "id": "667417b2-6975-4d8d-9c31-ba7a1bf136ce",
       "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:36:21.369Z"
+      "createdAt": "2025-07-16T16:18:54.060Z"
     },
     {
-      "id": "c317473c-c4ae-4985-923e-fa4c09cc7928",
+      "id": "3943bc7c-7bf2-49b0-88e6-ab7191ad0d14",
       "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:40:09.531Z"
-    },
-    {
-      "id": "924ada08-05d9-4763-b9f1-2f18c60ea04d",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:41:19.596Z"
-    },
-    {
-      "id": "7dfd9508-07a5-4c79-aedf-59ed6b06bb48",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:41:32.337Z"
-    },
-    {
-      "id": "1a16b29a-5a07-48f9-8dd0-082d40a6f14a",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T15:41:35.211Z"
+      "createdAt": "2025-07-16T16:20:51.200Z"
     }
   ]
 }

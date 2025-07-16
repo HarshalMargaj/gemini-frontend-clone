@@ -17,13 +17,20 @@ const Sidebar = () => {
 	const [chatrooms, setChatrooms] = useState([]);
 	const router = useRouter();
 
+	const sortChatrooms = data => {
+		const sorted = data.sort(
+			(a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+		);
+		setChatrooms(sorted);
+	};
+
 	useEffect(() => {
 		const fetchChatrooms = async () => {
 			try {
 				const response = await axios.get(
 					"http://localhost:3001/chatrooms"
 				);
-				setChatrooms(response.data);
+				sortChatrooms(response.data);
 			} catch (error) {
 				console.log(error);
 			}
@@ -43,8 +50,9 @@ const Sidebar = () => {
 			);
 			toast.success("New chat created");
 			router.push(`/dashboard/${newChatroom.data.id}`);
+			setSelectedChat(newChatroom.data.id);
 			const response = await axios.get("http://localhost:3001/chatrooms");
-			setChatrooms(response.data);
+			sortChatrooms(response.data);
 		} catch (error) {
 			console.log(error);
 		}
