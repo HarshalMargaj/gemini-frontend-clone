@@ -47,6 +47,90 @@
           "role": "ai",
           "text": "This is a simulated response from Gemini.",
           "timestamp": "10:18:53"
+        },
+        {
+          "id": 1752727927901,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:22:07"
+        },
+        {
+          "id": 1752727929416,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "10:22:09"
+        },
+        {
+          "id": 1752727930249,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:22:10"
+        },
+        {
+          "id": 1752727931759,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "10:22:11"
+        },
+        {
+          "id": 1752727932400,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:22:12"
+        },
+        {
+          "id": 1752727933908,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "10:22:13"
+        },
+        {
+          "id": 1752727934524,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:22:14"
+        },
+        {
+          "id": 1752727936030,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "10:22:16"
+        },
+        {
+          "id": 1752727936789,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:22:16"
+        },
+        {
+          "id": 1752727938299,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "10:22:18"
+        },
+        {
+          "id": 1752728675586,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:34:35"
+        },
+        {
+          "id": 1752728739071,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:35:39"
+        },
+        {
+          "id": 1752728777055,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "10:36:17"
+        },
+        {
+          "id": 1752728778570,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "10:36:18"
         }
       ]
     }
