@@ -13,6 +13,7 @@ import Tippy from "@tippyjs/react";
 import ChatroomMenuDropdownContent from "./ChatroomMenuDropdownContent";
 
 import { useLayoutStore } from "@/app/stores/LayoutStore";
+import SearchBar from "./SearchBar";
 
 const Sidebar = () => {
 	const [hoverChatId, setHoverChatId] = useState();
@@ -23,9 +24,23 @@ const Sidebar = () => {
 	const [chatrooms, setChatrooms] = useState([]);
 	const router = useRouter();
 	const pathname = usePathname();
-	const [open, setOpen] = useState(true);
 	const isSidebarOpen = useLayoutStore(state => state.isSidebarOpen);
 	const toggleSidebar = useLayoutStore(state => state.toggleSidebar);
+	const [searchQuery, setSearchQuery] = useState("");
+	const [filteredChatrooms, setFilteredChatrooms] = useState([]);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			const filtered = chatrooms.filter(chat =>
+				chat.title.toLowerCase().includes(searchQuery.toLowerCase())
+			);
+			setFilteredChatrooms(filtered);
+		}, 500);
+
+		return () => clearTimeout(timer);
+	}, [searchQuery, chatrooms]);
+
+	const displayedChatrooms = searchQuery ? filteredChatrooms : chatrooms;
 
 	const sortChatrooms = data => {
 		const sorted = data.sort(
@@ -50,11 +65,12 @@ const Sidebar = () => {
 
 	const createChatroom = async () => {
 		try {
+			const timestamp = new Date().toLocaleTimeString();
 			const newChatroom = await axios.post(
 				"http://localhost:3001/chatrooms",
 				{
 					id: uuidv4(),
-					title: "Simple Greeting and Response",
+					title: `Chatroom - ${timestamp}`,
 					createdAt: new Date().toISOString(),
 					messages: [],
 				}
@@ -85,6 +101,11 @@ const Sidebar = () => {
 					<PanelLeft />
 				</div>
 			</div>
+			{isSidebarOpen && (
+				<div>
+					<SearchBar setSearchQuery={setSearchQuery} />
+				</div>
+			)}
 			<button
 				onClick={createChatroom}
 				className="flex items-center gap-2 cursor-pointer"
@@ -94,7 +115,7 @@ const Sidebar = () => {
 			</button>
 			{isSidebarOpen && (
 				<div className="space-y-2">
-					{chatrooms.map(chatroom => (
+					{displayedChatrooms.map(chatroom => (
 						<div
 							onMouseEnter={() => setHoverChatId(chatroom.id)}
 							onMouseLeave={() => setHoverChatId(null)}
