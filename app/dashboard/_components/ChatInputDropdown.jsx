@@ -15,9 +15,9 @@ const ChatInputDropdown = ({ handleSend }) => {
 	};
 
 	return (
-		<div className="bg-neutral-700 rounded-md p-1 cursor-pointer">
+		<div className="shadow-lg dark:bg-neutral-700 rounded-md p-1 cursor-pointer bg-white text-black">
 			<div
-				className="p-2 rounded-md hover:bg-white/5"
+				className="p-2 rounded-md hover:bg-neutral-100"
 				onClick={handleClick}
 			>
 				Upload Image

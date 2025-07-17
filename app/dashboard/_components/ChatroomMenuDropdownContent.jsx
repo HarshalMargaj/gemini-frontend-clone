@@ -16,10 +16,10 @@ const ChatroomMenuDropdownContent = ({ id, setChatrooms }) => {
 	};
 
 	return (
-		<div className="bg-neutral-700 text-white p-1 rounded-md">
+		<div className=" shadow-lg dark:bg-neutral-700 text-white p-1 rounded-md">
 			<div
 				onClick={deleteChatroom}
-				className="flex items-center gap-2 text-red-400 cursor-pointer px-2 py-1 hover:bg-neutral-600 rounded-md"
+				className="flex items-center gap-2 text-red-400 cursor-pointer px-2 py-1 dark:hover:bg-neutral-600 hover:bg-neutral-100 rounded-md"
 			>
 				<Trash size={15} /> Delete
 			</div>

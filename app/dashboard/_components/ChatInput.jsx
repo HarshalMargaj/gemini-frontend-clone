@@ -107,14 +107,14 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 
 	return (
 		<div className="mt-4 flex">
-			<div className="border border-neutral-600 p-2 w-full rounded-md flex gap-2 items-center">
+			<div className="border dark:border-neutral-600 border-neutral-400 p-2 w-full rounded-md flex gap-2 items-center text-neutral-700 dark:text-white">
 				<Tippy
 					interactive={true}
 					trigger="click"
 					placement="top-start"
 					content={<ChatInputDropdown handleSend={handleSend} />}
 				>
-					<div className="cursor-pointer text-neutral-400 hover:bg-neutral-700 p-2 rounded-full">
+					<div className="cursor-pointer text-neutral-400 dark:hover:bg-neutral-700 hover:bg-neutral-100 p-2 rounded-full">
 						<CirclePlus size={15} />
 					</div>
 				</Tippy>

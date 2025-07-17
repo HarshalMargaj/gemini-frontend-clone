@@ -60,7 +60,9 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div className={`bg-[#272A2C] w-[250px] p-4 text-white space-y-6`}>
+		<div
+			className={`dark:bg-[#272A2C] w-[250px] p-4 dark:text-white space-y-6 h-full bg-white text-neutral-800 border-r border-neutral-200 dark:border-none`}
+		>
 			<Toaster />
 			<button
 				onClick={createChatroom}
@@ -81,8 +83,8 @@ const Sidebar = () => {
 						key={chatroom.id}
 						className={`${
 							selectedChat === chatroom.id
-								? "bg-[#1E3660]"
-								: "hover:bg-neutral-700"
+								? "dark:bg-[#1E3660] bg-blue-600 text-white"
+								: "dark:hover:bg-neutral-700 hover:bg-neutral-300"
 						} rounded-lg p-2  cursor-pointer text-sm flex items-center justify-between h-8`}
 					>
 						<div className="truncate">{chatroom.title}</div>

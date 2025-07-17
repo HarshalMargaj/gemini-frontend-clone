@@ -80,11 +80,11 @@ export default function LoginPage() {
 	};
 
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-[#1B1C1D]">
+		<div className="min-h-screen flex items-center justify-center dark:bg-[#1B1C1D]">
 			<Toaster />
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="bg-[#272A2C] p-8 rounded-xl shadow-md w-full max-w-md space-y-4"
+				className="dark:bg-[#272A2C] p-8 rounded-xl shadow-md w-full max-w-md space-y-4"
 			>
 				<h2 className="text-2xl font-semibold text-center text-gray-800 dark:text-white">
 					Login via OTP

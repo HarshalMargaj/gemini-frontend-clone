@@ -34,7 +34,7 @@ export default function ChatroomPage() {
 	}, []);
 
 	return (
-		<div className="flex flex-col flex-1 h-full bg-[#1B1C1D] text-white px-6 py-4">
+		<div className="flex flex-col flex-1 h-full dark:bg-[#1B1C1D] dark:text-white bg-white px-6 py-4">
 			{messages.length === 0 ? (
 				<div className="text-purple-400 font-bold text-4xl h-full flex items-center justify-center ">
 					Hello, Anonymouse

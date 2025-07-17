@@ -23,7 +23,9 @@ const Message = ({ msg }) => {
 		>
 			<div
 				className={`max-w-xs px-4 py-2 rounded-lg ${
-					msg.role === "user" ? "bg-blue-600" : "bg-neutral-700"
+					msg.role === "user"
+						? "bg-blue-600"
+						: "dark:bg-neutral-700 bg-neutral-400"
 				}`}
 			>
 				<div className="flex items-center gap-2 justify-between relative">
