@@ -1,19 +1,75 @@
 "use client";
 
+import Tippy from "@tippyjs/react";
 import axios from "axios";
+import { CirclePlus } from "lucide-react";
 import React, { useState } from "react";
+import ChatInputDropdown from "./ChatInputDropdown";
 
 const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 	const [input, setInput] = useState("");
 
-	const handleSend = async () => {
-		if (!input.trim()) return;
+	const handleSend = async file => {
+		if (!input.trim() && !file) return;
 
-		const userMessage = {
+		const timestamp = new Date().toLocaleTimeString();
+
+		let userMessage;
+
+		if (file) {
+			const reader = new FileReader();
+			reader.onloadend = async () => {
+				userMessage = {
+					id: Date.now(),
+					role: "user",
+					type: "image",
+					image: reader.result,
+					timestamp,
+				};
+
+				const updatedMessages = [...messages, userMessage];
+
+				try {
+					await axios.patch(`http://localhost:3001/chatrooms/${id}`, {
+						messages: updatedMessages,
+					});
+
+					setMessages(updatedMessages);
+					setIsTyping(true);
+
+					setTimeout(async () => {
+						const aiMessage = {
+							id: Date.now() + 1,
+							role: "ai",
+							text: "Nice image!",
+							timestamp: new Date().toLocaleTimeString(),
+						};
+
+						const newMessages = [...updatedMessages, aiMessage];
+
+						await axios.patch(
+							`http://localhost:3001/chatrooms/${id}`,
+							{
+								messages: newMessages,
+							}
+						);
+
+						setMessages(newMessages);
+						setIsTyping(false);
+					}, 1500);
+				} catch (error) {
+					console.log(error);
+				}
+			};
+			reader.readAsDataURL(file);
+			return;
+		}
+
+		userMessage = {
 			id: Date.now(),
 			role: "user",
 			text: input,
-			timestamp: new Date().toLocaleTimeString(),
+			timestamp,
 		};
 
 		const updatedMessages = [...messages, userMessage];
@@ -32,7 +88,7 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 					id: Date.now() + 1,
 					role: "ai",
 					text: "This is a simulated response from Gemini.",
-					timestamp: new Date().toLocaleTimeString(),
+					timestamp,
 				};
 
 				const newMessages = [...updatedMessages, aiMessage];
@@ -51,13 +107,25 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 
 	return (
 		<div className="mt-4 flex">
-			<input
-				value={input}
-				onChange={e => setInput(e.target.value)}
-				onKeyDown={e => e.key === "Enter" && handleSend()}
-				placeholder="Type your message..."
-				className="flex-1 p-2 rounded bg-[#272A2C] text-white border border-neutral-600 outline-none"
-			/>
+			<div className="border border-neutral-600 p-2 w-full rounded-md flex gap-2 items-center">
+				<Tippy
+					interactive={true}
+					trigger="click"
+					placement="top-start"
+					content={<ChatInputDropdown handleSend={handleSend} />}
+				>
+					<div className="cursor-pointer text-neutral-400 hover:bg-neutral-700 p-2 rounded-full">
+						<CirclePlus size={15} />
+					</div>
+				</Tippy>
+				<input
+					value={input}
+					onChange={e => setInput(e.target.value)}
+					onKeyDown={e => e.key === "Enter" && handleSend()}
+					placeholder="Type your message..."
+					className=" outline-none"
+				/>
+			</div>
 			<button
 				onClick={handleSend}
 				className="ml-2 bg-blue-600 px-4 py-2 rounded hover:bg-blue-700"

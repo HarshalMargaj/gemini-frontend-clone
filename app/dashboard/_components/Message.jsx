@@ -32,7 +32,7 @@ const Message = ({ msg }) => {
 							showCopy ? "truncate" : ""
 						}`}
 					>
-						{msg.text}
+						{msg.text ? msg.text : <img src={msg.image} />}
 					</p>
 					{showCopy && (
 						<div className="cursor-pointer absolute -right-2 -bottom-12">
