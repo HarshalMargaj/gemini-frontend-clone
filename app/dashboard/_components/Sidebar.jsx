@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 import { EllipsisVertical, SquarePen } from "lucide-react";
 import axios from "axios";
@@ -19,6 +19,7 @@ const Sidebar = () => {
 	});
 	const [chatrooms, setChatrooms] = useState([]);
 	const router = useRouter();
+	const pathname = usePathname();
 
 	const sortChatrooms = data => {
 		const sorted = data.sort(
@@ -86,7 +87,8 @@ const Sidebar = () => {
 						}}
 						key={chatroom.id}
 						className={`${
-							selectedChat === chatroom.id
+							selectedChat === chatroom.id &&
+							pathname !== "/dashboard"
 								? "dark:bg-[#1E3660] bg-blue-600 text-white"
 								: "dark:hover:bg-neutral-700 hover:bg-neutral-300"
 						} rounded-lg p-2  cursor-pointer text-sm flex items-center justify-between h-8`}
