@@ -1,14 +1,42 @@
 {
-  "chatrooms": [
-    {
-      "id": "667417b2-6975-4d8d-9c31-ba7a1bf136ce",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T16:18:54.060Z"
-    },
-    {
-      "id": "3943bc7c-7bf2-49b0-88e6-ab7191ad0d14",
-      "title": "Simple Greeting and Response",
-      "createdAt": "2025-07-16T16:20:51.200Z"
-    }
-  ]
+	"chatrooms": [
+		{
+			"id": "667417b2-6975-4d8d-9c31-ba7a1bf136ce",
+			"title": "Simple Greeting and Response",
+			"createdAt": "2025-07-16T16:18:54.060Z",
+			"messages": [
+				{
+					"id": "msg-1",
+					"sender": "user",
+					"content": "Hello!",
+					"timestamp": "2025-07-16T16:19:00.000Z"
+				},
+				{
+					"id": "msg-2",
+					"sender": "ai",
+					"content": "Hi! How can I help you today?",
+					"timestamp": "2025-07-16T16:19:03.000Z"
+				}
+			]
+		},
+		{
+			"id": "3943bc7c-7bf2-49b0-88e6-ab7191ad0d14",
+			"title": "Simple Greeting and Response",
+			"createdAt": "2025-07-16T16:20:51.200Z",
+			"messages": [
+				{
+					"id": "msg-1",
+					"sender": "user",
+					"content": "Hello!",
+					"timestamp": "2025-07-16T16:19:00.000Z"
+				},
+				{
+					"id": "msg-2",
+					"sender": "ai",
+					"content": "Hi! How can I help you today?",
+					"timestamp": "2025-07-16T16:19:03.000Z"
+				}
+			]
+		}
+	]
 }
