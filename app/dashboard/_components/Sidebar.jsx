@@ -13,7 +13,10 @@ import ChatroomMenuDropdownContent from "./ChatroomMenuDropdownContent";
 
 const Sidebar = () => {
 	const [hoverChatId, setHoverChatId] = useState();
-	const [selectedChat, setSelectedChat] = useState();
+	const [selectedChat, setSelectedChat] = useState(() => {
+		const storedId = localStorage.getItem("selectedChat");
+		return storedId ? storedId : "";
+	});
 	const [chatrooms, setChatrooms] = useState([]);
 	const router = useRouter();
 
@@ -51,7 +54,7 @@ const Sidebar = () => {
 			);
 			toast.success("New chat created");
 			router.push(`/dashboard/${newChatroom.data.id}`);
-			setSelectedChat(newChatroom.data.id);
+			localStorage.setItem("selectedChat", newChatroom.data.id);
 			const response = await axios.get("http://localhost:3001/chatrooms");
 			sortChatrooms(response.data);
 		} catch (error) {
@@ -79,6 +82,7 @@ const Sidebar = () => {
 						onClick={() => {
 							router.push(`/dashboard/${chatroom.id}`);
 							setSelectedChat(chatroom.id);
+							localStorage.setItem("selectedChat", chatroom.id);
 						}}
 						key={chatroom.id}
 						className={`${
