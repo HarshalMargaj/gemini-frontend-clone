@@ -46,6 +46,7 @@ const Sidebar = () => {
 					id: uuidv4(),
 					title: "Simple Greeting and Response",
 					createdAt: new Date().toISOString(),
+					messages: [],
 				}
 			);
 			toast.success("New chat created");
