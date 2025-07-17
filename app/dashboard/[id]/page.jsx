@@ -11,7 +11,6 @@ import ChatInput from "../_components/ChatInput";
 export default function ChatroomPage() {
 	const { id } = useParams();
 	const [messages, setMessages] = useState([]);
-	console.log(messages);
 
 	const [isTyping, setIsTyping] = useState(false);
 	const bottomRef = useRef(null);

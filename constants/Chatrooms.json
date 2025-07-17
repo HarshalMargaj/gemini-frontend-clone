@@ -131,6 +131,30 @@
           "role": "ai",
           "text": "This is a simulated response from Gemini.",
           "timestamp": "10:36:18"
+        },
+        {
+          "id": 1752731354704,
+          "role": "user",
+          "text": "sdfsdfasdfsdfsdfsdfasdfasdfasdfasdfasdfsdf",
+          "timestamp": "11:19:14"
+        },
+        {
+          "id": 1752731356222,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "11:19:16"
+        },
+        {
+          "id": 1752731390132,
+          "role": "user",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "11:19:50"
+        },
+        {
+          "id": 1752731391644,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "11:19:51"
         }
       ]
     }
