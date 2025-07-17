@@ -40,7 +40,7 @@ export default function ChatroomPage() {
 					Hello, Anonymouse
 				</div>
 			) : (
-				<div className="flex-1 overflow-y-auto space-y-4">
+				<div className="flex-1 scrollbar-hide overflow-y-auto space-y-4">
 					{messages?.map(msg => (
 						<Message key={msg.id} msg={msg} />
 					))}

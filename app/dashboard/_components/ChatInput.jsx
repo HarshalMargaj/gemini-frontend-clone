@@ -123,7 +123,7 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 					onChange={e => setInput(e.target.value)}
 					onKeyDown={e => e.key === "Enter" && handleSend()}
 					placeholder="Type your message..."
-					className=" outline-none"
+					className=" outline-none w-full"
 				/>
 			</div>
 			<button
