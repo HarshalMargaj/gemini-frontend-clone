@@ -157,6 +157,31 @@
           "timestamp": "11:19:51"
         }
       ]
+    },
+    {
+      "id": "3dce97ea-f837-42e6-972f-c3c28bdc70c0",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-17T05:55:51.874Z",
+      "messages": []
+    },
+    {
+      "id": "fac09293-584d-4331-bbd7-806e6f8b2651",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-17T05:56:22.524Z",
+      "messages": [
+        {
+          "id": 1752731934624,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "11:28:54"
+        },
+        {
+          "id": 1752731936139,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "11:28:56"
+        }
+      ]
     }
   ]
 }

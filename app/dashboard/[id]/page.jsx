@@ -35,19 +35,25 @@ export default function ChatroomPage() {
 
 	return (
 		<div className="flex flex-col flex-1 h-full bg-[#1B1C1D] text-white px-6 py-4">
-			<div className="flex-1 overflow-y-auto space-y-4">
-				{messages?.map(msg => (
-					<Message key={msg.id} msg={msg} />
-				))}
+			{messages.length === 0 ? (
+				<div className="text-purple-400 font-bold text-4xl h-full flex items-center justify-center ">
+					Hello, Anonymouse
+				</div>
+			) : (
+				<div className="flex-1 overflow-y-auto space-y-4">
+					{messages?.map(msg => (
+						<Message key={msg.id} msg={msg} />
+					))}
 
-				{isTyping && (
-					<div className="text-sm text-gray-400 italic">
-						Gemini is typing...
-					</div>
-				)}
+					{isTyping && (
+						<div className="text-sm text-gray-400 italic">
+							Gemini is typing...
+						</div>
+					)}
 
-				<div ref={bottomRef} />
-			</div>
+					<div ref={bottomRef} />
+				</div>
+			)}
 			<ChatInput
 				messages={messages}
 				setMessages={setMessages}
