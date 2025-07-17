@@ -17,10 +17,15 @@ import SearchBar from "./SearchBar";
 
 const Sidebar = () => {
 	const [hoverChatId, setHoverChatId] = useState();
-	const [selectedChat, setSelectedChat] = useState(() => {
+	const [selectedChat, setSelectedChat] = useState();
+
+	useEffect(() => {
 		const storedId = localStorage.getItem("selectedChat");
-		return storedId ? storedId : "";
-	});
+		if (storedId) {
+			setSelectedChat(storedId);
+		}
+	}, []);
+
 	const [chatrooms, setChatrooms] = useState([]);
 	const router = useRouter();
 	const pathname = usePathname();
