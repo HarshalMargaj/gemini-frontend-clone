@@ -73,10 +73,9 @@ const Sidebar = () => {
 		<div
 			className={`dark:bg-[#272A2C] ${
 				isSidebarOpen ? "w-[250px]" : "w-[60px]"
-			} p-4 dark:text-white space-y-6 h-full bg-white text-neutral-800 border-r border-neutral-200 dark:border-none transition-all ease-in-out
-
-    fixed top-0 left-0 z-50 sm:relative sm:z-auto
-    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0
+			} p-4 dark:text-white space-y-6 h-full bg-white text-neutral-800 border-r border-neutral-200 dark:border-none transition-all ease-in-out fixed top-0 left-0 z-50 sm:relative sm:z-auto ${
+				isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+			} sm:translate-x-0
 	`}
 		>
 			<Toaster />

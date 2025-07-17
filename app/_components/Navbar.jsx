@@ -10,7 +10,7 @@ const Navbar = ({ toggleTheme, theme }) => {
 			<div onClick={toggleSidebar} className="md:hidden">
 				<Menu />
 			</div>
-			<h1 className="text-2xl md:pl-0 pl-10">Gemini Clone</h1>
+			<h1 className="text-2xl">Gemini Clone</h1>
 			<div onClick={toggleTheme}>
 				{theme === "dark" ? <Sun /> : <Moon />}
 			</div>
