@@ -80,7 +80,7 @@ export default function LoginPage() {
 	};
 
 	return (
-		<div className="min-h-screen flex items-center justify-center dark:bg-[#1B1C1D]">
+		<div className="min-h-screen flex items-center justify-center dark:bg-[#1B1C1D] md:p-0 p-4">
 			<Toaster />
 			<form
 				onSubmit={handleSubmit(onSubmit)}

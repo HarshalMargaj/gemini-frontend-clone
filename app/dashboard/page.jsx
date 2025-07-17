@@ -3,7 +3,7 @@ import React, { useDebugValue } from "react";
 const page = () => {
 	return (
 		<div className="h-full flex items-center justify-center flex-col gap-4">
-			<div className=" text-4xl text-neutral-800 dark:text-white">
+			<div className="text-center md:text-4xl text-2xl text-neutral-800 dark:text-white">
 				What's on the agenda today?
 			</div>
 			<p className="text-sm text-gray-400 mb-4">

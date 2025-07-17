@@ -233,6 +233,25 @@
       "title": "Simple Greeting and Response",
       "createdAt": "2025-07-17T08:24:21.990Z",
       "messages": []
+    },
+    {
+      "id": "7b9504de-49dc-4a41-b23c-8294d20a4c7e",
+      "title": "Simple Greeting and Response",
+      "createdAt": "2025-07-17T08:40:08.488Z",
+      "messages": [
+        {
+          "id": 1752741624041,
+          "role": "user",
+          "text": "hi",
+          "timestamp": "14:10:24"
+        },
+        {
+          "id": 1752741625572,
+          "role": "ai",
+          "text": "This is a simulated response from Gemini.",
+          "timestamp": "14:10:24"
+        }
+      ]
     }
   ]
 }
