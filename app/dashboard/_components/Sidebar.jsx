@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 import { Box, EllipsisVertical, PanelLeft, SquarePen } from "lucide-react";
-import axios from "axios";
 
+import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import toast, { Toaster } from "react-hot-toast";
 import Tippy from "@tippyjs/react";
+
 import ChatroomMenuDropdownContent from "./ChatroomMenuDropdownContent";
+
+import { useLayoutStore } from "@/app/stores/LayoutStore";
 
 const Sidebar = () => {
 	const [hoverChatId, setHoverChatId] = useState();
@@ -21,6 +24,8 @@ const Sidebar = () => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const [open, setOpen] = useState(true);
+	const isSidebarOpen = useLayoutStore(state => state.isSidebarOpen);
+	const toggleSidebar = useLayoutStore(state => state.toggleSidebar);
 
 	const sortChatrooms = data => {
 		const sorted = data.sort(
@@ -67,13 +72,17 @@ const Sidebar = () => {
 	return (
 		<div
 			className={`dark:bg-[#272A2C] ${
-				open ? "w-[250px]" : " w-[60px]"
-			} p-4 dark:text-white space-y-6 h-full bg-white text-neutral-800 border-r border-neutral-200 dark:border-none transition-all ease-in-out`}
+				isSidebarOpen ? "w-[250px]" : "w-[60px]"
+			} p-4 dark:text-white space-y-6 h-full bg-white text-neutral-800 border-r border-neutral-200 dark:border-none transition-all ease-in-out
+
+    fixed top-0 left-0 z-50 sm:relative sm:z-auto
+    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0
+	`}
 		>
 			<Toaster />
 			<div className="flex items-center justify-between">
-				{open && <Box />}
-				<div onClick={() => setOpen(!open)}>
+				{isSidebarOpen && <Box />}
+				<div onClick={toggleSidebar}>
 					<PanelLeft />
 				</div>
 			</div>
@@ -82,9 +91,9 @@ const Sidebar = () => {
 				className="flex items-center gap-2 cursor-pointer"
 			>
 				<SquarePen />
-				{open && "New chat"}
+				{isSidebarOpen && "New chat"}
 			</button>
-			{open && (
+			{isSidebarOpen && (
 				<div className="space-y-2">
 					{chatrooms.map(chatroom => (
 						<div
