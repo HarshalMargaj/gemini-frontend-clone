@@ -30,7 +30,7 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 				const updatedMessages = [...messages, userMessage];
 
 				try {
-					await axios.patch(`http://localhost:3001/chatrooms/${id}`, {
+					await axios.patch(`https://chatrooms-db.onrender.com/chatrooms/${id}`, {
 						messages: updatedMessages,
 					});
 
@@ -48,7 +48,7 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 						const newMessages = [...updatedMessages, aiMessage];
 
 						await axios.patch(
-							`http://localhost:3001/chatrooms/${id}`,
+							`https://chatrooms-db.onrender.com/chatrooms/${id}`,
 							{
 								messages: newMessages,
 							}
@@ -75,7 +75,7 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 		const updatedMessages = [...messages, userMessage];
 
 		try {
-			await axios.patch(`http://localhost:3001/chatrooms/${id}`, {
+			await axios.patch(`https://chatrooms-db.onrender.com/chatrooms/${id}`, {
 				messages: updatedMessages,
 			});
 
@@ -93,7 +93,7 @@ const ChatInput = ({ messages, setMessages, id, setIsTyping }) => {
 
 				const newMessages = [...updatedMessages, aiMessage];
 
-				await axios.patch(`http://localhost:3001/chatrooms/${id}`, {
+				await axios.patch(`https://chatrooms-db.onrender.com/chatrooms/${id}`, {
 					messages: newMessages,
 				});
 

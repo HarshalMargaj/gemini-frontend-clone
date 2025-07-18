@@ -6,8 +6,12 @@ import toast from "react-hot-toast";
 const ChatroomMenuDropdownContent = ({ id, setChatrooms }) => {
 	const deleteChatroom = async () => {
 		try {
-			await axios.delete(`http://localhost:3001/chatrooms/${id}`);
-			const response = await axios.get("http://localhost:3001/chatrooms");
+			await axios.delete(
+				`https://chatrooms-db.onrender.com/chatrooms/${id}`
+			);
+			const response = await axios.get(
+				"https://chatrooms-db.onrender.com/chatrooms"
+			);
 			setChatrooms(response.data);
 			toast.success("Chatroom deleted");
 		} catch (error) {

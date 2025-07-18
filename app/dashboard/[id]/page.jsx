@@ -23,7 +23,7 @@ export default function ChatroomPage() {
 		const fetchChatroomMessages = async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:3001/chatrooms/${id}`
+					`https://chatrooms-db.onrender.com/chatrooms/${id}`
 				);
 				setMessages(response.data.messages || []);
 			} catch (error) {

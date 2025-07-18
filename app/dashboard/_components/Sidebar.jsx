@@ -58,7 +58,7 @@ const Sidebar = () => {
 		const fetchChatrooms = async () => {
 			try {
 				const response = await axios.get(
-					"http://localhost:3001/chatrooms"
+					"https://chatrooms-db.onrender.com/chatrooms"
 				);
 				sortChatrooms(response.data);
 			} catch (error) {
@@ -72,7 +72,7 @@ const Sidebar = () => {
 		try {
 			const timestamp = new Date().toLocaleTimeString();
 			const newChatroom = await axios.post(
-				"http://localhost:3001/chatrooms",
+				"https://chatrooms-db.onrender.com/chatrooms",
 				{
 					id: uuidv4(),
 					title: `Chatroom - ${timestamp}`,
@@ -83,7 +83,9 @@ const Sidebar = () => {
 			toast.success("New chat created");
 			router.push(`/dashboard/${newChatroom.data.id}`);
 			localStorage.setItem("selectedChat", newChatroom.data.id);
-			const response = await axios.get("http://localhost:3001/chatrooms");
+			const response = await axios.get(
+				"https://chatrooms-db.onrender.com/chatrooms"
+			);
 			sortChatrooms(response.data);
 		} catch (error) {
 			console.log(error);
